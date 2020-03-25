@@ -1,0 +1,305 @@
+杰普大前端工程师班
+
+1. 大前端课程体系
+	三要素：HTML CSS Javascript
+	1) 重构
+		html5 	3天 主讲3小时
+		css3 		10天
+		项目驱动，项目内容融入到授课中（网易严选首页）
+	2) dom驱动阶段
+		linux操作系统 	5天
+			mac系统、ubuntu16.04(8G + 固态硬盘)、阿里云服务器（腾讯云、百度云）10元/月
+			js、java、c、c++
+			1. 学习编程（科学）
+			2. 服务器，外网ip
+			介绍宠物
+		Javascript 	12天
+			ES5、dom、bom(alert、ajax) 			
+		jQuery/H5 api 	5天
+			打扫卫生 		
+				单页				扫把去打扫 		人力 		 			dom(通过js操作html/css的过程)
+				作业				120平米 打扫 	吸尘器（戴森） jquery
+				中大型项目 		1000平米 		保姆					vue
+	3) 企业级开发阶段
+		Javascript(ES6)
+		vue、vuerouter、vuex、element-ui、axios ...
+		app 			混合式app开发模式，weex(vue语言) -> android/ios app（媲美原生 90%+）
+				苹果手机 iphone11 pro max 	1w
+				小米手机 										1k
+				凡事存在皆有理
+		微信小程序
+			语法基本与vue类似
+		微信公众号
+			响应式布局的网页（html/css/vue）
+	4) 拓展阶段
+		服务器技术 nodejs、mysql
+		其他企业级框架
+			Vue 			*
+			Angularjs
+			React
+
+
+2. 主流的软件开发模式
+	前后台分离开发
+		前端做前端的事情
+			1) 页面渲染
+			2) 数据交互（数据通信 浏览器-服务器） BS架构
+		后端做后端的事情
+			1) 数据交互（数据通信 Java - 数据库）
+			2) 数据交互 (数据通信 Java - 浏览器)
+
+		浏览器 - Java - Mysql
+
+3. 职业规划
+	1) 大前端工程师 	*
+	2) Java工程师 	* （python/php/c#）
+	3) 大数据工程师												就业与薪资！！！
+	4) 人工智能工程师
+	5) 嵌入式工程师
+
+
+4. 大前端开发环境的搭建
+	写代码过程
+	1) 编写代码（编辑器）【vscode、sublime】
+	2) 运行 						【浏览器（【firefox、chrome】opera、ie、safari、360）】
+
+	linux
+	前端的部署环境
+		apache2、nginx、ftp
+
+5. vscode的使用
+	1) 先创建工作目录
+		D:
+		briup
+			1-html
+			2-css
+			3-js
+	2) 通过vscode打开这个工作目录
+		根据需要创建子目录及文件
+	3) hello world
+		在day01中新建一个文件，hello.html		
+
+6. Html
+	核心课程，前端三要素：
+		HTML、				结构 		身材 头[眉毛、眼睛、鼻子、嘴巴]、体、脚
+		CSS、 				样式			化妆
+		Javascript 	交互 		才艺
+	元素
+		<html>
+			<head>
+				<meta/>
+				<title></title>
+			</head>
+			<body>
+				
+			</body>
+		</html>
+	1) 概述
+		html 超级文本标记语言
+			h 	超级 	超级链接、图片、视频、音频
+			t 	文本 	字符
+			m 	标记 	<p>helloworld</p> <strong>hello</strong> <h1>标题</h1>
+			l 	语言 	
+	2) http 超级文本传输协议
+			h 	超级
+			t 	文本
+			t 	传递
+			p 	协议
+	3) url 统一资源定位符
+		用于定位网络资源的一种规定
+		http://134.175.154.93:6677/swagger-ui.html
+		https://www.baidu.com
+
+		购买阿里云服务器
+		域名
+		域名与服务器绑定
+7. HTML元素的介绍
+	一个元素中应该包含开始标签，结束标签，内容/子标签
+	元素
+	开始标签，其内部可以出现属性，用于修饰元素
+	结束标签
+	内容
+	属性：
+		核心属性：绝大多数标签都具有的属性
+			id
+			class
+			title
+			style
+		自有属性：某些标签特有的属性
+			img 	src		alt 		width
+			a 		href 	target
+	<div id="one" class="first">
+		<p>hello</p>
+		<p>world</p>
+	</div>
+8. 标签分类
+	淡化默认样式，强化语义。标签的语义在网页合适的位置选取合适的标签
+	1) 块级标签
+		主要作用：搭建网页结构，结构性标签
+		div 	无意义的盒子
+		h1~h6 标题
+		p 		段落
+		ul>li 无序列表
+		ol>li 有序列表
+		dl>dt、dd 	自定义列表
+
+		H5新增结构性标签【与div类似，唯一的区分在于语义不同】
+			header
+			article
+			section
+			footer
+			nav
+			aside
+			...
+		块级元素特点：
+			1. 独占一行空间
+
+	2) 行内标签
+		span 	无意义的行内标签
+		a 		超级链接
+		img 	图片	
+		装饰类标签
+		strong 	加粗
+		b 
+		em 			强调
+		i 			斜体
+		sub/sup 	上标、下标
+		delete 	删除线
+
+		行内元素特点
+			1. 与其他行内元素共享一行空间
+
+
+	注意：
+		行内元素应该出现在块级元素内部的，而块级元素不能出现在行内元素的内部。
+
+	最佳实现
+		使用块元素搭建网页结构！！！
+		1. 在一行中放两块
+			<div>
+				<div>左</div>
+				<div>右</div>
+			</div>
+			<ul>
+				<li></li>
+				<li></li>
+			</ul>
+		2. 文本
+			<div>
+				欢迎您，张三
+				退出
+			</div>
+	注释 
+	<!-- 注释内容 -->
+9. css3
+	1. 学习目标
+		1) 如何重置样式
+		2) 如何优化样式
+			1. 如何布局
+			2. 如何细化
+	2. 认识css
+		层叠样式表，用于修饰HTML结构的（布局、样式修饰）
+			<div>
+				<div>左</div>
+				<div>右</div>
+			</div>
+		1) 什么是布局？
+			默认情况下，左、右是上下排列（块元素的特点是独占一行空间！）
+			可以使用css技术，让其进行左右排列
+		2) 什么是样式修饰
+			排列（居中，居左，居右）
+			字体（粗细、大小、颜色）
+			背景（背景色，背景图片，背景渲染起点，背景填充方式）
+
+	3. css语法
+		1. 样式
+			选择器1 {
+				key1:val1; 	/*规则 */
+				key2:val2;
+				....
+			}
+			选择器2 {
+				key1:val1; 	/*规则 */
+				key2:val2;
+				....
+			}
+			什么是选择器？
+				精确选择要添加样式的目的地
+			.header > div:first-child{
+				float:left;
+				text-align: left;
+				color: #666666;
+			}
+			解释：
+				选择器		.header > div:first-child 
+				规则 			{key:val}
+					文本类 text-
+					字体类 font-
+					背景色 background
+					布局类 float position ...
+4. css如何应用到html中
+	1) 嵌入在html(header)标签中【上课】
+		将css写在html中
+
+	2) 外部导入一个单独的css文件【项目】
+		将css写在一个单独的css文件中，然后通过link导入到html中
+
+	3) 嵌入在html标签中【较少，修改别人代码】
+		将css写在html中的标签的属性中
+
+5. 选择器
+	1) 基本选择器
+		id选择器 
+			#two {}
+		类选择器
+			.second{}
+		标签选择器
+			p {}		
+		或者选择器
+			.first , .second {}
+		并且选择器
+			div.first{}
+	2) 层次选择器 
+		子代选择器 (建议再5层以内)
+			div.first > p {}
+		后台选择器
+			div.first li {}
+		下一个兄弟选择器
+			 #two_li + li
+		之后所有兄弟选择器
+			 #two_li ~ li
+	3) 过滤器
+		1. 伪元素过滤器（伪元素选择器）
+			:first-child
+
+		2. 伪类过滤器（伪类选择器）
+
+
+
+-----------------
+1. 拓展小知识
+	手动在自己电脑上搭建一个服务器，模拟网页的访问过程
+	1) 在windows中安装apache httpd服务器
+	2) 将你写的网页放到apache的部署目录下
+	3) 通过url地址进行访问
+	4) 局域网内其他伙伴也能进行访问
+
+2. 面试要求
+	1) 描述一下什么是块元素，什么是行内元素，什么时候使用块元素，什么时候使用行内元素？
+	2) 谈谈你对选择器的认识？如何使用好选择器？
+	3) HTML与css什么关系，如何在html中应用css?这几种方式优缺点？
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
