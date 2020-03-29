@@ -3,35 +3,47 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>选择器</title>
+  <title>过滤器</title>
   <style>
-    .first > *:first-of-type{
+
+    ul > li:nth-child(2) {
       color: lightblue;
+    }
+    p:hover {
+      color: olivedrab;
+    }
+    a:visited {
+      color: #999999;
+    }
+    a:hover {
+      color: #333333;
+    }
+    a:active {
+      color: red;
     }
   </style>
 </head>
 <body>
   <div class="first" id="one">
-    <p>this is first</p>
+    <a href="https://www.baidu.com">百度一下</a>
+    <a href="https://www.taobao.com">淘宝一下</a>
+    <a href="https://www.jd.com">京东一下</a>
+    <p>this is first p</p>
     <ul>
       <li>one</li>
       <li id="two_li">two</li>
       <li>three</li>
       <li>four</li>
     </ul>
-    <p>first  last p</p>
   </div>
   <div class="second" id="two">
-    <p>this is second</p>
+    <p>this is second p</p>
     <ul>
       <li>five</li>
       <li>six</li>
     </ul>
-    <p>second last p</p>
   </div>
-  <h1 class="first" id="three">
-    this is title 1
-  </h1>
+  <h1 class="first" id="three">this is title 1</h1>
   <h1 class="second" id="four">this is title 2</h1>
 
 </body>

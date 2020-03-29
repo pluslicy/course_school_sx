@@ -269,11 +269,114 @@
 		之后所有兄弟选择器
 			 #two_li ~ li
 	3) 过滤器
+		选择器 过滤器
 		1. 伪元素过滤器（伪元素选择器）
-			:first-child
+			::after  	在选中元素的内部后面插入一个元素(伪元素【没有开始标签结束标签】)
+			::before 	在选中元素的内部前面插入一个元素(伪元素【没有开始标签结束标签】)
+			
+			ul>li::before{}
+			ul>li::after{}
+
+			<ul>
+				<li> <span></span> </li>
+				<li> <span></span> </li>
+				<li> <span></span> </li>
+			</ul>
 
 		2. 伪类过滤器（伪类选择器）
+			:first-child
+			:last-child
+			:nth-child(n)
+			:only-child
 
+			:first-of-type  		
+			:last-of-type
+			:nth-of-type(n)
+
+			:hover
+			:visited
+			:active
+		
+		3. 属性过滤器
+			选择器[key x val ]
+			div[id] 		选中div元素，并且这个元素中具有id属性
+			div[id=one] 选中div并且id属性值为one,等价于 div#one
+			div[id^=o] 	选中div并且id的值以o开头
+			div[id$=o] 	选中div并且id的值以o结尾
+			div[id~=o] 	选中div并且id的值之一为o
+			div[id*=o] 	选中div并且id的值中包含o
+
+6. 盒子模型
+	块元素（盒子）
+		搭建网页结构
+	1.	特点：
+			1) 独占一行空间
+			2) 默认宽度为100%，（占满父元素）
+			3) 高度默认为0，如果有子元素，父元素高度由子元素决定
+			4) 宽度和高度可以改变，通过width/height
+	2. 概念
+		1）宽度 	width
+		2）高度		height
+		3）外边距 margin
+			margin:1px; 	【速写形式】外边距上右下左都有1px
+			margin:1px 2px; 				上下为1px;右左为2px
+			margin:1px 2px 3px;			上1px ,右左2px,下3px
+			margin:1px 2px 3px 4px;	上1px ,右px,下3px,左4px
+
+			margin-top:1px;
+			margin-bottom:2px;
+			margin-left:10px;
+			margin-right:5px;
+		4）边框 	border
+			border:1px solid #ccc; 	【使用频率最高的速写，超级速写】
+				上下右左边框的宽度为1，样式为实心线，颜色为#ccc
+			border-width 	【速写】边框宽度 
+				border-width:1px;
+				border-top-width:1px;
+				border-bottom-width:1px;
+				border-right-width:1px;
+				border-left-width:1px;
+			border-style 	边框样式
+				border-top-style:solid;
+				border-bottom-style:dotted;
+				border-right-style:dashed;
+				border-left-style:double;
+			border-color 	边框颜色
+				border-top-color:
+				border-right-color:
+				border-bottom-color:
+				border-left-color:
+
+		5）内边距	padding
+			与margin类型
+			padding:1px;	【速写形式】
+			padding:1px 2px;
+			padding:1px 2px 3px;
+			padding:1px 3px 3px 4px;
+
+			padding-top:
+			padding-right:
+			padding-bottom:
+			padding-top:
+
+	3.盒子类型
+		1) 传统盒子（内容盒子）
+			box-sizing:content-box;
+			width 表示的是盒子中内容的宽度，不包含border padding
+			盒子所在的宽度 = width = 左右boder + 左右padding
+		2) 怪异盒子（边框盒子）
+			box-sizing:border-box;
+			width 表示的是边框内部（包含边框）的所有总和
+			width : 100px
+				假如border:10px;padding:10px; 内容的宽= 100px - 2*10px - 2*10px = 60px
+
+	行内元素
+		特点：
+			1) 与其他行内元素共享一行空间
+			2) 无法指定宽高，所占位置由其内容决定
+
+7. 布局
+	使用盒子来进行布局，布局目的是为了让块元素在一行中显示
 
 
 -----------------
@@ -289,7 +392,11 @@
 	2) 谈谈你对选择器的认识？如何使用好选择器？
 	3) HTML与css什么关系，如何在html中应用css?这几种方式优缺点？
 
-
+3. 如何重构网页
+	搭建网页结构
+	填充
+	细化
+	从上往下，由外而内
 
 
 
