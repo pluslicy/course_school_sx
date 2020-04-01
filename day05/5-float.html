@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>浮动</title>
+  <style>
+    .content {
+      background-color: red;
+    }
+    .content::after {
+      content: "";
+      display: block;
+      clear: both;
+    }
+    .one {
+      float: left;
+      background-color: azure;
+      height: 500px;
+      width: 100px;
+     
+    }
+    .two {
+      background-color: beige;
+      height: 200px;
+      width: 400px;
+      float: left;
+    }
+    .three {
+      background-color: burlywood;
+      height: 300px;
+      width: 400px;
+      float: left;
+    }
+  </style>
+</head>
+<body>
+  <div class="content">
+    <div class="one"></div>
+    <div class="two"></div>
+    <div class="three"></div>
+
+  </div>
+</body>
+</html>
