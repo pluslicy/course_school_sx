@@ -1,0 +1,219 @@
+复习
+重构
+  html/css/Javascript/linux
+
+1. Html
+  1) 语法
+    doctype
+      H5  <!DOCTYPE html>
+      H4  <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+    html主体
+      元素
+        开始标签 子元素/内容 结束标签
+        标签是系统内置的
+        <div>
+          <h1>hello world</h1>
+        </div>
+      属性
+        html属性声明在开始标签中，属性名和属性值使用=分割，属性与属性之间通过空格分割
+        <div id="one" class="first">
+          <h1>hello world</h1>
+        </div>
+        <div id="two" class="first title">
+          <h1>hello world</h1>
+        </div>
+      核心属性
+        绝大多数元素都具有的属性
+        id      唯一标识
+        class   类别
+        style   样式，css
+        title   说明
+      自有属性
+        <a href="" target=""></a>
+  2) 注释
+    <!---->
+  3) 元素分类
+    1. 块级元素（标签） 【语义】      
+      作用：用于搭建网页的结构 
+      特点：独占一行空间；宽的默认为100%，高度默认由内容决定；在css中可以通过width/height自定义宽高
+      细节：
+        div   无意义的块元素
+        h1~h6 标题  [字体加粗，外边距，字号较大]
+        p     段落
+        ul>li     无序列表
+        ol>li     有序了吧
+        dl>dt/dd  自定义列表
+
+        h5新增的块元素【语义】
+        header  <=>  <div class="header"></div>
+        nav
+        article
+        section
+        aside
+        footer
+        address
+
+
+
+      原则：在重构页面的时候，一般不是用块元素的默认样式
+      不关注他的默认显示，因为在使用之前一般都要去重置他们的样式
+        
+    2. 行级元素（标签）
+      作用：填充，功能性
+      特点：
+      细节
+        span  无意义
+        a     超级链接
+        img   图片
+        strong b em i sub sup   装饰类
+
+      原则：在行内元素中不要嵌入块元素，行内元素绝大多数都嵌套在块元素中      
+2. css部分
+  学习内容：规则，选择器，动画效果，过渡效果
+  1) 语法
+    选择器 {
+      规则
+    }
+  2) css在html中的使用方式
+    1. 将css规则作为html元素的属性值
+      <div style="color:#ffffff;background-color:pink">hello world</div>
+      <div style="color:#ffffff;background-color:pink">hello world</div>
+    2. 将css集中嵌入到style中
+      <html>
+        <head>
+          <title>出现在浏览器选项卡中</title>
+          <style>
+            .first {
+              color:#ffffff;
+              background-color:pink;
+            }
+          </style>
+        </head>
+        <body>
+          <div class="first">hello world</div>
+          <div class="first">你好世界</div>
+        </body>
+      </html>
+    3. 将css单独的写在一个css文件中，然后通过link导入进来
+      style.css
+        .first {
+          color:#ffffff;
+          background-color:pink;
+        }
+
+      index.html
+      <html>
+        <head>
+          <title>出现在浏览器选项卡中</title>
+          <link rel="stylesheet" href="./style.css">
+        </head>
+        <body>
+          <div class="first">hello world</div>
+          <div class="first">你好世界</div>
+        </body>
+      </html>
+  3) 选择器
+    1. 基本选择器
+      元素选择器  
+        div {}
+      id选择器
+        #one {}
+      class选择器
+        .first {}
+      并且选择器
+        div.first {}  选中div元素，并且这个div的class为first
+      或者选择器
+        div,.first{}  选中div元素，或者选中class为first的元素
+      普遍选择器
+        *
+    2. 层次选择器
+      子代选择器
+        ul > li {}
+      后代选择器
+        .one a {}
+        <div class="one">
+          <ul>
+            <li><a href="">first</a></li>
+            <li><a href="">second</a></li>
+            <li><a href="">third</a></li>
+          </ul>
+        </div>
+      下一个兄弟选择器
+        .one li:first-child + li { }
+      之后所有兄弟选择器
+        .one li:first-child ~ li { }
+
+    3. 过滤器
+      在选择器的基础上进行过滤
+      1) 属性过滤器
+        selector[name]  
+          input[name]       选中input元素，并且input元素具有name属性
+        selector[name=value]
+        selector[name^=value]
+        selector[name$=value]
+        selector[name*=value]
+      2) 伪元素过滤器
+        会虚拟出来一个伪元素
+        ::before
+        ::after
+
+        ul::before { }
+        ul::after { }
+
+        <ul>
+          ::before
+          <li>one</li>
+          <li>two</li>
+          ::after
+        </ul>
+
+      3) 伪类过滤器
+        :first-child
+        :last-child
+        :nth-child(3)
+        :nth-child(even)  偶数
+        :nth-child(odd)   奇数
+        :nth-child(3n+1)  表达式
+        :only-child
+
+        :hover
+        :active
+        :visited
+
+        :focus 
+
+        :not()
+          除了
+  4) 盒子模型
+    1. 盒子组成
+      外边距  margin
+        margin:10px;    上右下左
+        margin:10px 5px;  上下为10px,左右为5px
+        margin:10px 5px 1px;  上10px ,左右5px, 下1px
+        margin:10px 5px 3px 1px;
+      边框    border
+      内边距  padding
+      内容    width/height
+    2. 盒子类型
+      1) 边框盒子，怪异盒子
+        box-sizing:border-box;
+
+        width = 内容width + padding + border
+      2) 内容盒子， 普通盒子【默认】
+        box-sizing:content-box;
+
+        width = 内容的宽
+        盒子实际占据宽度 = width + padding + border
+  5) 布局
+    为了让块元素在一行中显示，那么就出现了布局
+    1. 浮动布局
+      float:left
+        一个块元素添加了这个规则后就变成了浮动元素，脱离默认的文档流
+        特点：
+          1) 宽度不再占满父元素，宽度由内容决定，我们可以自己指定
+          2) 在原来的默认文档流中不再占据位置，其他的非浮动元素就会抢占该元素原来在默认文档流中的位置
+          3) 多个浮动元素会在一行中显示，如果一行放不下，则会换行显示
+          4) 浮动元素对父元素失去了支撑
+    2. 定位布局
+
+    3. 伸缩盒布局

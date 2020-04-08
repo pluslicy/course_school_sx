@@ -397,8 +397,29 @@
 				解决方案：
 					在父元素中插入一个伪元素，让这个伪元素清理浮动
 
+8. 规则
+	1) 字体规则(可以被继承)
+		font-family 	字体栈  
+		font-style:
+		font-weight:
+		font-size:
+		line-height:
+		font:bold normal 14px/1.5em '微软雅黑'
 
+		em 相对单位，相对于当前元素的字体大小
+		<div style="font-size:14px;line-height:2em">
+			hello world
+		</div>
 
+		rem 相对单位，相对于body中声明的字体大小
+		body{
+			font-size:10px
+		}
+		<div style="font-size:14px;line-height:2rem">
+			hello world
+		</div>
+
+		https://developer.mozilla.org/zh-CN/docs/Web/CSS/font
 
 
 -----------------
