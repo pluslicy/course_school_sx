@@ -399,7 +399,7 @@
 
 8. 规则
 	1) 字体规则(可以被继承)
-		font-family 	字体栈  
+		font-family 	'Microsoft YaHei',宋体 
 		font-style:
 		font-weight:
 		font-size:
@@ -420,6 +420,95 @@
 		</div>
 
 		https://developer.mozilla.org/zh-CN/docs/Web/CSS/font
+	2) 网络字体（字体图标库）iconfont
+		图片（设计师设计icon图标）
+
+		图标--特殊的字体 （写的字跟画画一样）
+	
+	3) 文本相关规则【可以被继承】
+		text-decoration 	字体装饰
+			none				不加任何字体装饰
+			underline 	下划线
+			line-through删除线
+			overline		上划线
+		color
+			关键字 	lightblue 	blue 	red
+			十六进制	#000000 	#ffffff 	#ff0000 	#32b593
+			rgb			rgb(r,g,b) 	0~255 	rgb(255,0,0)
+			rgba 		rgba(r,g,b,a) 	0~255 	rgb(255,0,0,0.5)
+		text-align 	容器中的字体的排列方式
+		text-transform 	转换英文的大小写
+			uppercase
+			lowercase
+		text-indent
+	4) 列表相关（ul,ol）
+		list-style:none 	取消列表的样式（列表项前面的小黑点或者数字）
+	5) 盒子相关
+		width
+		height
+		margin 		外边距
+			margin-top
+			margin-right
+			margin-bottom
+			margin-left
+		border 		边框
+		padding 	内边距
+		box-sizing
+			content-box 	内容盒子 (默认盒子) width 不包含padding、border
+			border-box 		边框盒子 (怪异盒子) width 包含padding、border
+	6) 背景相关
+		background-color: 	背景色
+		background-clip: 	背景的铺设范围
+			border-box 		边框及边框以内
+			padding-box 	内边距及内边距以内
+			content-box 	内容
+		background-image:
+			url('./images/logo.jpg');
+			背景图，参数为地址【相对地址、绝对地址】
+		background-repeat: no-repeat;
+			背景图的重复方式
+			no-repeat 	不重复
+			repeat-x 
+			repeat-y
+		background-position: center;
+			背景图的显示位置
+			center
+			let 			左边中间
+			left top 	左上角
+			10px 20px
+		background-size: cover;	
+			cover  		调整背景图的大小以至于覆盖整个区域
+			contain 	调整背景图的大小以至于背景图嵌入到区域中，有可能回导致容器中部分没有背景覆盖
+		background-origin: content-box;
+			背景图的铺设七点
+			border-box
+			padding-box
+			content-box
+
+		background
+			背景色的简写形式
+
+		
+
+
+	---------------
+		html(语法、块元素、行内元素)
+		css(语法、选择器、规则、布局、动画、过渡效果、媒体查询【响应式网页】)
+		Javascript(js -操作->html/css 【dom】 )
+	---------------
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 -----------------
