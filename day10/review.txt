@@ -1,0 +1,72 @@
+1. html
+  块元素
+    div
+
+  行内元素
+    span
+  
+  功能性标签
+
+2. css
+  语法
+
+  选择器
+
+  规则
+    font-*
+    text-*
+    list-style
+    background-*
+    margin-*
+    padding-*
+    border-*
+    width/height
+
+3. 布局
+    使用块元素搭建网页结构->使用css完成布局->细化内容
+    1) 浮动布局
+      float:left
+      脱离文档流（宽高默认情况下由内容决定；不占据网页中原来的位置）
+      多个浮动元素可以在一行中显示（这多个元素应该是一个级别）
+      clear:both 
+      清理左右两侧的浮动元素；当前元素向下移动，保证左右两边没有浮动元素
+      ul::after {
+        content:"";
+        clear:both;
+        display:block;
+      }
+    2) 定位布局
+      position:static;  //默认（非浮动元素）
+
+      position:relative;  相对定位
+        不脱离文档流
+        相对于当前元素所在位置
+      position:absolute;  绝对定位
+        脱离文档流
+        相对于距离它最近的父定位元素
+      position:fixed;     固定定位
+        脱离文档流
+        相对于浏览器视口
+        不会随着浏览器内容的滚动而滚动
+      position:sticky;    粘滞定位
+        是相对定位和固定定位的一种结合
+        当超过阈值的时候就会变成固定定位
+
+      所有的定位元素可以使用left/right/bottom/top来进行定位
+
+
+
+
+    <div class="nav">
+      <div class="wrapper">
+        <ul>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+        </ul>
+      </div>
+    </div>
+    <ul>
+      <li></li>
+    </ul>

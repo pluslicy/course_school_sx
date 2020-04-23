@@ -371,7 +371,11 @@
 			padding-right:
 			padding-bottom:
 			padding-top:
-
+		6) 圆角边框
+			border-radius:5px;
+			border-top-left-radius:
+			border-top-right-radius:
+			...
 	3.盒子类型
 		1) 传统盒子（内容盒子）
 			box-sizing:content-box;
@@ -442,6 +446,29 @@
 		</style>
 		<div class="one"></div>
 
+	3. 伸缩盒布局（css3）
+		1. 网页分类
+			1) 固定内容宽度 （wrapper width:1190px） 网易，淘宝，京东，太原理工...
+			2) 内容宽度自适应 （响应式） 腾讯视频，爱奇艺
+			3) 完全响应式 H5网页【伸缩盒】
+				微信打开的网页都属于完全响应式
+		
+		一般应用于响应式布局
+		2. 概念
+			主轴： 伸缩盒元素排列的轴
+			交叉轴：与主轴垂直的轴
+
+			伸缩盒元素沿着主轴排列，默认情况下，伸缩盒元素在交叉轴上的距离是100%，在主轴的距离由内容决定
+
+		3. 应用
+			伸缩盒容器
+				display:flex; 	 			// 声明当前元素为伸缩盒元素
+				flex-direction:row;		//指定主轴方向
+			伸缩盒元素
+				flex-grow:1; 					// 伸缩盒元素对于主轴上伸缩盒容器的剩余空间的分配 ，1表示占一份
+				flex-shrink:1; 				// 对于亏损空间的抵扣
+				flex-basis:100px; 		// 基准值
+				flex:grow shrink basic; 	速写模式
 
 
 
