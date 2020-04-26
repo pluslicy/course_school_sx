@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>伸缩盒元素</title>
+  <link rel="stylesheet" href="../common.css">
+  <style>
+    ul.box {
+      display: flex;
+      flex-direction: row;
+      background-color: #f4f4f4;
+    }
+    /*1280px 100px 200px 100px*/
+    ul.box > li {
+      flex-grow: 1;   /*除去基准值只有，容器如果还有剩余的空间，那么对于剩余空间占据的份数*/
+      flex-shrink: 1; /*由于伸缩盒元素宽度的总和大于伸缩盒容器的宽度，收缩份数*/
+      margin: 0 1em;
+    }
+    ul.box > li:nth-child(odd) {
+      flex-basis: 100px;
+      background-color: darkcyan;
+    }
+    ul.box > li:nth-child(even){
+      flex-basis: 200px;
+      background-color: darksalmon;
+    }
+  </style>
+</head>
+<body>
+  <ul class="box">
+    <li>one</li>
+    <li>two</li>
+    <li>three</li>
+  </ul>
+</body>
+</html>

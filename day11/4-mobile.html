@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>移动端布局</title>
+  <link rel="stylesheet" href="../common.css">
+  <style>
+    .first {
+      padding: 0 1em;
+      display: flex;
+      justify-content: space-around;
+    }
+    .first > li {
+      line-height: 2em;
+    }
+
+    .second {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      padding:0 1em;
+    }
+    .second > li {
+      box-sizing: border-box;
+      flex-basis: 18%;
+      height: 50px;
+      background-color: #f3f3f3;
+      border-radius: 5px;
+      margin-bottom: .2em;
+
+      padding: .5em;
+      background-clip: content-box;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <ul class="first">
+      <li>网易自营品牌</li>
+      <li>30天无忧退换</li>
+      <li>48小时快速退款</li>
+    </ul>
+    <ul class="second">
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+    </ul>
+  </div>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>伸缩盒布局</title>
+  <link rel="stylesheet" href="../common.css">
+  <style>
+    .news {
+      background-color: #f4f4f4;
+    }
+    .wrapper  {
+      width: 1400px;
+      margin: 0 auto;
+      background-color: #cccccc;
+    }
+    .news ul.news_list {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      align-items: stretch;
+      justify-content: space-between;
+    }
+    .news ul.news_list > li {
+      width: 24.311926%;
+      height: 265px;
+      background-color: darkcyan;
+    }
+  </style>
+</head>
+<body>
+  <div class="news">
+    <div class="wrapper">
+      <ul class="news_list">
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+      </ul>
+    </div>
+  </div>
+</body>
+</html>

@@ -450,8 +450,19 @@
 		1. 网页分类
 			1) 固定内容宽度 （wrapper width:1190px） 网易，淘宝，京东，太原理工...
 			2) 内容宽度自适应 （响应式） 腾讯视频，爱奇艺
-			3) 完全响应式 H5网页【伸缩盒】
+				1240px 	- 1090px
+				1600px 	- 1400px
+
+			3) 完全响应式 H5网页【伸缩盒】（flex兼容性，移动端浏览器【android(google chrome),ios(safari)】）
 				微信打开的网页都属于完全响应式
+				bootstrap 栅格系统 	
+					v3 	float
+					v4 	flex
+
+			如果将一个pc端布局的网页在手机设备中打开，一般是非常难看的
+			pc端网页： 	固定内容宽度（1090px）,内容宽度自适应（1280px-1090px,1680px-1480px）
+			移动端网页： 宽度自适应， 手机设备标准各异。（满屏铺）
+
 		
 		一般应用于响应式布局
 		2. 概念
@@ -462,13 +473,26 @@
 
 		3. 应用
 			伸缩盒容器
-				display:flex; 	 			// 声明当前元素为伸缩盒元素
-				flex-direction:row;		//指定主轴方向
+				display: flex;        /*声明当前元素为伸缩盒元素*/
+				flex-direction:row ;  /*主轴在x轴上*/
+				flex-wrap: wrap;      /*当伸缩盒元素在伸缩盒容器中放不下的时候，是否需要进行换行*/
+				justify-content: space-around;  /*伸缩盒元素在主轴上的排列方式*/
+				align-items:stretch;  /*伸缩盒元素在交叉轴的排列*/
 			伸缩盒元素
 				flex-grow:1; 					// 伸缩盒元素对于主轴上伸缩盒容器的剩余空间的分配 ，1表示占一份
 				flex-shrink:1; 				// 对于亏损空间的抵扣
 				flex-basis:100px; 		// 基准值
 				flex:grow shrink basic; 	速写模式
+
+			<ul>
+				<li>
+					<div></div>
+					<div></div>
+					<div></div>
+				</li>
+				<li></li>
+				<li></li>
+			</ul>
 
 
 

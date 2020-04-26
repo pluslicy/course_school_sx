@@ -1,0 +1,17 @@
+html{
+  font-size: 20px;  /*1rem = 20px*/ 
+}
+body {
+  font:14px '微软雅黑';
+  color: #333333;
+  margin: 0;
+}
+ul,ol,p,h1,h2,h3 {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+a {
+  text-decoration: none;
+  color: #333333;
+}
