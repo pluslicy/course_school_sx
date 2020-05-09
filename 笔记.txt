@@ -1,0 +1,1195 @@
+1. 介绍
+	李春雨
+
+2. 引入
+	项目研发（项目储备）
+	1) estore (电子商城)
+		1. 后台管理子模块
+			数据来源 （数据库）
+			后台管理系统
+			分类管理（
+			商品管理
+			品牌管理
+			订单管理
+			...
+		2. 购物子模块
+			浏览首页
+			筛选
+			列表页面
+			查看商品详情
+			添加购物车
+			提交订单
+			...
+	2) estore - 企业级要求
+		架构
+			springboot
+			spring 
+			springmvc 
+			mybatis
+			mybatis-generator
+			mysql
+			poi				（excel）
+			fastdfs 	(分布式附件服务器)
+			spring security(自己封装 jwt)
+			git 		版本控制（svn）
+			github	代码中央仓库（团队协作）
+
+		大前端（web + 移动互联 + 小程序公众号）
+			html/css/js
+			android
+			jquery h5api
+			vue vuex vuerouter
+			cordova
+			weex
+3. 思考
+	什么是前后台分离开发
+	什么是大前端开发，大前端开发中包含了哪些东西
+	如果你是一个项目经理，你如何去调度资源来进行开发？
+		婚纱摄影
+			婚纱照
+			公众号（宣传）
+			预约下单
+		会员管理
+		支付对接
+		文件传递
+		插件（提升工作效率）
+
+	大厂（BAT）
+		JavaEE（综合实力）
+			后台 - 前端
+
+	创业
+		各个体系比较熟悉
+
+4. 课程安排（大前端基础）
+	html5
+	css3
+	android基础（cordova,weex）
+	js基础
+
+5. Html基础
+	1. 环境搭建
+		1) 编辑器环境
+			轻量级的编辑
+			sublime(emmet插件)
+			vscode *
+		2) 浏览器环境（测试）
+			firefox
+			google chrome
+			opera
+			safari
+			ie8+ 兼容性
+	2. hello world
+		编写代码 -> 运行测试 -> 交付（部署）【网站】
+			1） 部署在tomcat中( 动态服务器- 慢)
+				tomcat/webapps/
+					hello.html
+			2) 部署在静态服务器（apache/nginx）
+				阿里云（ubuntu16.04）134.175.154.93
+					jdk
+					mysql
+					apache
+						/var/www/html
+					tomcat
+
+		编写代码 -> 编译代码 ->测试 -> 打包 （jar/war）
+		目录管理
+			d:/briup
+				javaee
+					eclipse
+					tomcat
+					maven
+					workspace
+					...
+				webui
+					html
+					css
+					js
+	3. html结构
+		超文本标记语言
+			超级文本（文本,超级链接,图片，视频，音频...）
+		doctype声明 	
+			HTML5:
+				<!DOCTYPE html> 
+			HTML4:
+				<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">	
+		html主体结构
+			<html>
+				<head>
+					<!--源信息 -->
+					<meta charset="UTF-8">
+
+				</head>
+				<body>
+					<!--可以显示在网页中的内容-->
+				</body>
+			</html>
+
+		xml
+			标签是可以自定义的
+		html
+			所有的标签都是内置的
+			<h1>一级标题</h1>
+
+		语法
+			html由各种元素组成，一个元素通常包含开始标签，结束标签，内容
+			在开始标签中可以添加属性
+
+			<div class="content" id="one">
+				<span>hello world</span>
+			</div>
+
+			属性
+			1) 核心属性：id、title、style、class
+				绝大多数元素都具备的属性
+			2) 特有属性
+				某些元素中特有的属性
+					a 		
+						href 
+						target
+					img 	
+						src 
+						width 
+						height
+	4. html那些事
+		Java 
+			编译型语言
+			.java -> .class -> jvm
+
+			隶属于sun/oracle公司的，有具体的公司及团队维护，所有的标准oracle说了算，jvm也是oracle开发的
+
+			语法升级 	拉姆达
+			jvm升级（解释java代码）
+			效果升级 
+			springboot写完代码之后如何部署
+				1) 打包成为war,直接抛在tomcat/webapps，war就会自动解压
+				2) 打包成为jar,直接运行jar(内置了tomcat)
+
+		html
+			解释型语言
+			.html -> 浏览器
+
+			网页编程标准，w3c
+			h4 -> h5
+
+			语法升级 	
+				废弃掉 strong frameset ...
+				新增		header article section...
+			解释器
+				火狐，谷歌，欧朋...
+				容错性非常棒
+			效果升级
+
+	5. 标签
+		学什么？
+			标签含义
+			如何使用标签(语义)
+			默认样式重置 h1
+
+			丰田霸道 45w左右 卤素 led ; 硬塑料 真皮; 轮毂
+
+		1) 块级别标签
+			作用：搭建网页的结构
+			特点：宽度默认占满父元素,高度默认由内容决定,宽高可以自定义
+				<div>
+					<ul>
+						<li></li>
+					</ul>
+				</div>
+
+			div 			【容器】无意义的块元素（无招胜有招）
+			h1~h6 		标题
+			p 				段落
+			ul>li 		【容器】列表
+			ol>li 		【容器】列表
+			dl>dd,dt 	【容器】列表
+
+
+			<div class="content">
+				<div class="wrap">
+					<h1 class="header"></h1>
+					<div class="products">
+						<ul>
+							<li></li>
+							<li></li>
+							<li></li>
+							<li></li>
+							<li></li>
+							<li></li>
+							<li></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+
+		2) 行级别标签
+			作用：填充网页
+			特点：默认宽高由内容决定；宽高无法指定；所有的行内元素可以共享一行空间;行内元素内部一般不允许嵌套子元素，只允许放文本
+
+			span 			无意义的行内元素
+			a 				超链接
+				href 
+				target
+			img 			图片
+				src
+				alt 	当图片找不到的时候的文本替代
+			strong b em i sub sup d ...
+
+			<span>hello</span>
+			<a href="">百度一下</a>
+
+	6. css入门
+		三要素：
+			1) html (网页骨架) 	块 ，行 （table/form）
+			2) css（页面装饰，布局，动画过渡效果）
+				原则：对于动画效果能用css实现的绝对不用js
+			3) Javascript（树莓派）
+				动态DOM, 类似于jstl
+				数据交互
+		如何在html中使用css(3种方式)
+			1) 嵌入在标签内部
+					将css代码写在了html中，较为混乱
+					复用性较低
+
+					好处：优先级高，简单直接（修改别人代码的时候，weex rn）
+			2) 集中嵌入在style标签中
+					
+			3) 将css独立写在外部的css文件中，并且通过link导入进来
+				适用于企业级开发
+		css语法
+			选择器 {
+				/*规则*/
+				color:#ffffff;
+				background-color:pink;
+			}
+			
+
+	7. css选择器 (jQuery选择器)
+		1) 核心选择器
+			用法：选择较大范围
+			1. 标签（元素）选择器
+				div {}
+				h1 {}
+			2. id选择器
+				#one {}
+				<div id="one">one</div>
+				<div id="two">two</div>
+			3. class选择器
+				.first {}
+				<div id="one" class="first">one</div>
+				<div id="two" class="first">two</div>
+				<div id="three" class="first">one</div>
+				<div id="four" class="second">two</div>
+				<p id="five" class="first">p</div>
+			词穷！！！
+			4. 并且选择器
+				div.first {}
+				p#five {}
+			5. 或者选择器
+				div,.first {}
+			6. 普遍选择器
+				* 	
+		2) 层次选择器【一般不超过5层】
+			1. 子代选择器
+				.top_nav > ul > li
+				选中class为top_nav的元素的直接后代ul元素的直接后代li元素
+			2. 后代选择器
+				.top_nav li				
+			3. 下一个兄弟选择器
+				.top_nav li + *
+			4. 之后所有兄弟选择器
+				.top_nav li ~ *
+		3) 过滤器
+			对已经选择到的元素进行过滤
+			1. 属性过滤器
+				selector[name]	已选择到的元素具有name属性
+				selector[name=v]	已选择到的元素具有name属性，并且name属性的值为v
+				selector[name^=v]	已选择到的元素具有name属性，并且name属性的值以'v'开头
+				selector[name$=v]	已选择到的元素具有name属性，并且name属性的值以'v'结尾
+				selector[name*=v]	已选择到的元素具有name属性，并且name属性的值中包含了'v'
+			2. 伪类过滤器
+				以:开头的
+				selector:first-child 	过滤出已选择元素中的是第一个孩子的元素
+				selector:last-child 	
+				selector:nth-child(2)
+				selector:nth-child(even)
+				selector:nth-child(odd)
+				selector:nth-child(3n+1)
+				selector:only-child
+				selector:not(selector)
+				...
+
+				selector:hover
+				selector:active
+				selector:visited
+				selector:focus
+			3. 伪元素过滤器
+				可以产生出来一个虚拟元素（行内元素）
+				以::开头的
+				div::before {
+
+				}
+				div::after {
+
+				}
+				<div>
+					::before
+					<p>one</p>
+					<p>two</p>
+					::after
+				</div>
+	8. 规则【简单大方】
+		单位值
+			px 	像素 
+		字体【设计师-架构师规定】
+		【可以被继承】
+			<div style="font-size:12px">
+				one
+				<div>
+					two
+				</div>
+			</div>
+
+			font-size 	字体大小 	默认16px 	
+			font-weight 字体粗细程度
+				normal【默认】
+				bold 		加粗
+				bolder	比当前元素上继承的值要大一些
+				100~900
+			font-style 	风格 （是否打开斜体）
+				normal【默认】
+				italic
+			font-family 	字体族
+			line-height 	行高
+				绝对单位：1px 
+			速写
+			font: [font-weight] [font-style] font-size/line-height font-family
+
+		网络字体（字体图标库）
+			iconfont【阿里巴巴的字体图标库】
+			1. 选取自己想要图标
+			2. 生成项目
+			3. 按照说明进行使用
+		
+		文本【可以被继承】
+			text-align
+				left 	居左排列
+				center
+				right	
+			text-indent 	文本缩进
+			text-decoration
+				line-through
+				overline
+				underline
+				none
+			text-transform 	字体大小写转换
+				uppercase
+				lowercase
+		列表
+			list-style:none
+		盒子
+			margin
+			padding
+			border
+			width
+			height
+		背景
+			background-color 	背景色
+				关键字 		teal	red 	black white
+				十六进制	#ffffff 	#000000 	#ff0000
+				rgb函数 	rgb(255,255,255)
+				rgba函数 	rgba(0,0,0,.5)
+      background-clip 	背景覆盖区域
+				border-box 	边框及边框以内全部覆盖
+				padding-box 内边距及内边距以内全部覆盖
+				content-box 内容区域全部覆盖
+      background-origin: border-box;
+				背景图铺设的起点
+      background-image: url('./images/a.jpg');
+				背景图
+      background-repeat: no-repeat;
+				背景图的重复方式
+      background-size: contain;
+				背景图的覆盖方式
+      background-position: 50px 50px;
+				关键字 center
+				坐标点 1px 2px
+				背景图开始铺设的坐标
+			backgroud:
+				速写形式
+	9. css布局 *
+		布局就是为了解决多个块元素在一行中显示的问题。
+		0) 默认文档流
+			块元素从上往下进行排列
+		1) 浮动布局
+			float:left;
+				向左侧浮动
+			clear:left;
+				当前元素左侧不允许有浮动元素，换行
+			display:block;
+				将一个元素设置为块元素
+				<span style="display:block"></span>
+				
+			应该加在块元素上
+			1> 特点：
+				1. 宽高默认由内容决定（一般要给浮动元素指定宽度）
+				2. 脱离文档流，在默认文档流不会再占据空间
+				3. 在同一层次中，所有的浮动元素会在一行显示，当一行中无法容纳这些浮动元素的时候，就会自动换行
+				4. 浮动元素会失去对父元素的支撑
+			2> 浮动元素的父元素没有高度的问题
+				1. 所有子元素浮动，通过伪元素进行支撑
+				2. 保留一个子元素不浮动，用于支撑父元素，为了让他显示出来，可以加margin
+
+		2) 定位布局
+			position:static; 【静态】
+
+      position:relative
+      position:absolute
+      position:fixed
+      position:sticky
+
+			如果一个元素具有position规则，并且规则值为relative,absolute,fixed,sticky之一,那么，我就认为这个元素是一个定位元素；只有定位元素才能使用如下规则：
+				left:
+				right:
+				bottom:
+				top:
+
+			相对定位
+      	position:relative
+				特点：
+					1. 相对于当前元素所在位置
+					2. 当前元素不会脱离文档流(即使发生了移动也不会被其他元素抢占位置)
+				应用：
+					一般情况下相对定位要配合绝对定位来进行移动
+
+			绝对定位
+      	position:absolute
+				特点：
+					1. 相对于距离它最近的父定位元素，如果它的父元素没有定位元素，那就相对于浏览器视口
+					2. 脱离文档流（不占据默认文档流的空间；块元素的宽度不再为100%）
+			固定定位
+      	position:fixed
+				特点：
+					1. 相对于浏览器视口
+					2. 脱离文档流（不占据默认文档流的空间；块元素的宽度不再为100%）
+					3. 不会随着屏幕的移动而移动
+			
+			粘滞定位(补充)
+
+
+		=) 案例
+			1. 块元素居中
+				给块元素一个宽度
+				margin:0 auto;
+
+	10. 选择器的优先级 *
+		Importance 		特权
+			!important
+		Specificity 	权重（积分机制）
+			1000 	style属性中
+			100 	id选择器
+			10 		类选择器，伪类过滤器，属性过滤器
+			1 		元素选择器，伪元素选择器
+		Source order 	顺序
+
+	11. 问题反馈及解决
+		1. 移动端网页的理解、PC网页的理解
+			1) 两套代码【针对复杂的网页】
+				一套用于在pc中打开（浮动，定位）【https://you.163.com/】
+					容器一个宽度 .wrapper 	1200px
+				一套用于在移动端打开【https://m.you.163.com/】
+			2) 一套代码【针对简单的网页】
+				跟随者屏幕的宽度而自动改变布局方式
+		2. display:
+			block  	将一个元素设置为块元素	
+				可以设置width,height
+				宽度默认为100%,高度默认由内容决定
+				独占一行空间
+			inline 	将一个元素设置为行内元素
+				不可以设置width,height
+				与其他行内元素共享一行空间
+			inline-block 	将一个元素设置为行内块元素
+				可以设置width,height
+				可以与其他行内元素共享一行空间
+			...
+		3. vertical-align【用于在一个盒子中，有多个行内元素，但是这个多个行内元素高度不一致，通过这个属性可以调整多个元素的垂直位置，一般用于一行既有文本，也有图片/边框】
+			用来指定行内元素（inline）或表格单元格（table-cell）元素的垂直对齐方式。
+	
+	11. 伸缩盒布局
+
+		响应式布局（bootstrap[封装了一些布局代码，完成响应式布局]，栅格系统）
+			<div class="row"> 
+				<div class="col-sm-2">1</div>
+				<div class="col-sm-2">2</div>
+				<div class="col-sm-2">3</div>
+				<div class="col-sm-2">4</div>
+				<div class="col-sm-2">5</div>
+				<div class="col-sm-2">6</div>
+			</div>
+			布局代码：浮动，定位，伸缩盒
+			bs3 	float 	稳定（绝大多数浏览器都兼容）
+			bs4 	flex 		兼容（今年来，绝大多数浏览器都兼容）
+			
+			spring security 	jdk8 拉姆达 	jdk1.6(银行)
+
+		1. 语法
+			<div class="parent">
+				<div>1</div>
+				<div>2</div>
+				<div>3</div>
+			</div>
+
+			【声明在父元素上的规则】
+			display:flex;
+				这个规则应用到父元素上，表示当前元素为伸缩盒。默认情况下，主轴在x轴上，交叉轴在y轴上
+			flex-direction: row/column
+				默认情况下，为row (主轴在x轴上)
+			flex-wrap:no-wrap/wrap
+				默认情况下，为no-wrap，表示当容器中的子元素宽度和超过了容器宽，不换行
+			justify-content 对主轴上剩余空间的排列设置（不要使用flex-grow对剩余空间进行分配了！）
+				flex-start
+				flex-end
+				center
+				space-around
+				space-between
+			align-items	交叉轴上的显示
+				flex-start 	交叉轴的开始排列
+				flex-end 		交叉轴结束排列
+				center 			交叉轴的中间排列
+			【声明在子元素上的规则】
+			flex-basis: 	指定子元素的宽度基准【固定，相对】,width
+      flex-grow: 1;	对容器剩余空间的分配，1表示当前元素占据剩余空间的一份
+			flex-shrink:1;对于亏损空间的垫付，1表示栈亏损空间的一份
+			flex: flex-grow flex-shrink flex-basis;
+	
+		2. 封装
+			数据问题？模拟数据【电商】
+			商品管理
+				一条条录入
+				python	爬虫 	jd 	
+				1) 华为p40 	5999 	介绍 	主图	... 	(300条)
+
+				前端 -> Java -Jpython->python
+
+			软件工作室
+			3人				flex-basic 	flex-grow 	flex-shrink
+			a 	200 	200w 	2 	+300w 				-150w 	50
+			b 	100 	100w 	1 	+150w 				-75w 		25
+			c 	100 	100w 	1 	+150w					-75w		25
+				1000w
+				100w
+			
+13. 表格与表单（html）
+	【一般应用在后台管理系统中】
+	html标签（块、行内、功能【table、iframe、form】）
+	css3
+		选择器（基本，层次，属性过滤器，伪元素过滤器，伪类过滤器）
+		规则（文本，字体，背景，列表，盒子）
+		盒子模型
+		布局（浮动，定位布局，伸缩盒布局）
+		-- bootstrap()
+
+	1) 表格
+		与列表类似，用于展现一些数据，一般不用于布局，因为他的默认样式太复杂
+			你是不是做技术？？？ 	你是不是IT（猥琐，邋遢，有钱）【外界】 表格
+			格局？							div 架构
+
+		table 		表格容器
+			caption 表格标题
+			thead 	表格的表头
+				tr > th > *
+			tbody 	表格的主体
+				tr > td > *
+			tfoot 	表格底部
+				tr > td > *
+
+		表格美化
+			1. 属性
+				align:center
+				colspan 	跨列 	【通过excel来操作模拟】
+				rowspan 	跨行 	
+
+			2. css 	首选方案！！
+				table {
+					border-collapse:collapse
+					width:90%;
+					margin:0 auto;
+				}
+
+				table td,
+				table th {
+					border:1px solid #ccc;
+					text-align:center;
+				}
+
+	2) iframe
+		div.container
+			div.header
+			div.content
+				div.left
+				div.right
+		iframe
+			将外部的一个网页链接进来你当前的网页中
+	3) 表单
+		注意：
+			1. 在企业级开发的时候，一般不直接使用这些表单，因为表单元素在不同的浏览器中显示的样子是不同的。一般使用组件（bootstrap/element-ui...）
+			2. 看点资讯精选
+				发布文章功能：
+					标题 							input type="text"
+					文章所属分类			select 	如果是二级分类，需要插件，树形下拉菜单
+					正文 							富文本编辑器（需要插件）
+			3. 在表单学习的时候
+				掌握表单和表单元素的属性及特性
+				掌握交互原理 
+
+
+		获取用户输入的数据，是用户与我们程序之间一个数据桥梁
+		同步
+			form表单的直接提交就是同步操作
+		异步
+			form表单通过ajax提交
+
+		form
+			action 	url(相对路径、绝对路径)
+			method 	get/post 
+			enctype 【只有在method=post考虑，如果是get方式，参数将会被直接编码为查询字符串，无法更改】
+				application/x-www-form-urlencoded
+					默认值								保存或更新品牌数据【字符，photo,name,introduce】
+					查询字符串
+					username=terry&password=123321&department=1
+					规则：
+						属性名与属性值之间通过=分割
+						键值对之间通过&分割
+						属性值中如果有特殊字符，会将这个特殊字符转换为百分比格式【这也是为什么二进制不能使用这种编码】
+							/ => %2F
+				multipart/form-data 		附件上传【二进制图片】
+					如果表单中出现了二进制文件，<input type="file" name="file"/>,就无法使用查询字符串，只能用这种协议
+				text/plain
+
+				application/json【目前在同步请求中不支持，但是在ajax中是支持的】
+
+		表单及元素
+			<form>
+				<input type="text"/> 			单行文本框
+				<input type="password"/> 	单行密码框
+				<input type="file"/> 			文件选择按钮，encotype必须为multipart/form-data
+				<input type="radio"/> 		单选按钮
+					单选按钮一般会同时出现多个，着多个按钮的name值必须相等才能达到互斥的要求
+					value必须通过，这样当勾选某个单选按钮的时候会提交该按钮上的value值
+				<input type="checkbox"/> 	复选按钮
+				<input type="reset"/> 		将表单内容恢复默认
+				<input type="submit"/> 		提交表单
+				<input type="button/> 		普通按钮
+				...【h5新增】
+				<input type="search" placeholde="请输入关键字"/> 		搜索框
+				<input type="date" /> 														日期框
+				
+				
+				<select name="department">
+					<option value="1">JavaEE</option>
+					<option value="2">WebUI</option> 				当用户选择WebUI的时候，department的值为2
+					<option value="3">BigData</option>
+				</select>
+				<textarea name="introduce rows="" cols="">提示...</textarea>
+			</form>
+		
+
+	鄙视链
+		iphone产品工程师 		-> 富士康		-> 	大众iphone用户 	-> 不会使用iphone
+		研究协议，自定义协议 	-> 使用协议（http,请求头）->前端（http 知道） -> 美工（不知道）
+		嵌入式 c 						-> java -> 前端 -> 美工
+
+14. 动画（前端【移动互联】）- 美观夸张【扁平化】
+	梦幻西游，呼吸灯... 
+	语法
+		animation
+			1)关键帧定义
+				随着时间移动的一些列的css规则
+				@keyframes name {
+					0% {
+						width:100px
+					}
+					50% {
+						width:300px
+					}
+					100%{
+						width:150px;
+					}
+				}
+			2)动画定义
+				.move {
+					animation-name: move; 							指定关键帧名称
+					animation-duration: 2000ms; 				设置动画持续时间（from-to）
+					animation-timing-function: linear;  时间曲线
+					animation-fill-mode:backwards; 			动画完成后保持的规则（from/to）
+					animation-delay: 1000ms; 						持续时间
+					animation-iteration-count: infinite;重复次数
+					animation-direction:alternate-reverse; 	动画运行的方向
+					animation: 		以上的速写形式
+				}
+			3) 应用
+				<div class="move"></div>
+				开源组件库 
+				自定义组件库
+
+			flash (直播流-监控)
+				海康 flash
+			4) animation.css（css3 animation动画轮子）
+				1. 导入animation.css
+				2. 调用class
+
+	框架
+
+15. 过渡效果
+	一般表示在元素状态切换的时候的过渡效果
+
+	transition-property
+		规则名
+		规则名1,规则名2[,...]
+		all
+		指明在状态切换的时候，哪些属性添加过渡效果
+
+	transition-duration
+		持续时间 ms/s
+	transition-timing-function
+		linear
+		steps
+	transition-delay 
+		延迟 ms/s
+	transition
+		transition-property transition-duration [transition-delay][transition-timing-function]
+
+16. 变形
+	transform 	
+		指定变形函数
+
+		1)旋转
+			rotate(deg) 	旋转度数
+			rotateX(deg)
+			rotateY(deg)
+			rotateZ(deg)
+		2) 平移
+			translate(长度)
+			translateX(长度)
+			translateY(长度)
+			translateZ(长度)
+		3) 放大
+			scale()
+			scaleX()
+			scaleY()
+		4) 拉伸
+			skew(deg)
+			skewX(deg)
+			skewY(deg)
+	transform-origin	
+		指定变形的原点
+
+17. 媒体查询（响应式布局）
+
+	@media(媒体查询条件) {
+		选择器 {
+			规则
+		}
+	}
+	1) 媒体查询的应用位置
+		1.直接应用在规则内部
+			<style>
+				html{
+					font-size:20px
+				}
+				@media screen and (max-width:1500px){
+
+				}
+			</style>
+		2.应用在link标签中
+			<link rel="stylesheet" href="./css/screen_small.css" media="(max-width: 1380px)">
+			<link rel="stylesheet" href="./css/screen_middle.css" media="(min-width: 1380px) and (max-width: 1500px)">
+			<link rel="stylesheet" href="./css/screen_large.css" media="(min-width: 1500px) and (max-width: 1780px)">
+			<link rel="stylesheet" href="./css/screen_xlarge.html" media=" (min-width: 1780px) ">
+		3.应用在style标签中
+			<style>
+			
+			</style>
+			<style media="screen and (max-width: 1380px)">
+				.wrapper {
+					width: 1105px;
+				}
+				html {
+					font-size: 20px;  
+				}
+			</style>
+			<style media="screen and (min-width: 1380px) and (max-width: 1500px)">
+				.wrapper {
+					width: 1200px;
+				}
+				html {
+					font-size: 25px;  
+				}
+			</style>
+
+	2)注意：
+		1. 如果我们编写的网页运行在pc中，那么一般要给固定宽度，但是这个宽度如果随着屏幕的宽度发生改变，我们就成为响应式（.wrapper）
+		2. 如果我们编写的网页运行在大屏上，一般就采用满屏铺，不用指定wrapper
+		3. 如果我们编写的网页运行在mobile中，一般就采用满屏铺，不用指定wrapper,但是需要响应式布局
+			如果手机宽屏（横放）
+				原先一行放4列，横放后一行放2列
+			手机
+			pad
+
+18. at规则（@）
+	1) @font-face
+	2) @keyframes
+	3) @media
+	4) @import
+		@import url
+		@import url list-of-media-queries;
+	5) @charset 
+		指定当前css文件的编码格式（说明当前文件是使用xx编码）
+
+19. css脚本语言（css预处理语言）【了解】
+	sass
+	less
+
+20. bootstrap4(思路，封装)【了解】
+	第三方库：iconfont/animation.css/bootstrap
+	bs 是css3的一个库，也就说我们如果用了这个库，就可以很少的去写css代码,因为css中提供了大量的选择及规则。我们只管通过类调用即可
+
+	css库
+	js库
+	组件库
+
+	bootstrap-reboot.css 		重置样式，类似于我们自己写的common.css，要比我们写的好多了
+	bootstrap-grid.css 			栅格布局（封装了flex布局【bs4封装float布局】）
+	bootstrap.css 					完整样式（包含重置样式，栅格布局，按钮，表格，下拉菜单，模态框...）
+
+
+	vue (组件库-栅格系统、组件[table,form,button])
+	
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+	屏幕标准：
+		2560px 	宽屏高分辨率
+		1680px 	
+		1280px	正常屏幕
+
+	网易严选	 * -> 1090px
+	淘宝			* -> 1190px
+	京东 			* -> 1190px
+	美图			*	-> 1190px
+
+	腾讯：
+		2560px 	-> 1710px
+		1920px 	-> 1710px
+		1680px 	-> 1500px
+		1280px 	-> 1200px
+		* 			-> 1200px
+
+	新需求：
+		让你仿写的网易严选适应
+			1920px 	-> 1710px 	（screen>1780px）
+			1680px 	-> 1500px 	(1500px<screen<1780px)
+			1280px 	-> 1200px 	（screen < 1500px）
+
+		
+	手机端响应:
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-----
+javascript
+	准备：
+		ubuntu16.04 (1. 强制使用linux、2. 强制编写代码、3.最专业学习方法)
+		vim
+	1. ECMAScript 10天【vim】
+		语法标准（所有的浏览器及js解析器都遵循的标准）
+		let a = 3;
+		let sayHell = function(){}
+		sayHello();
+
+	2. DOM 	2天【vscode】
+		各个浏览器提供的通过js操作html的api，会有兼容性问题，另外只能在浏览器上执行
+		document.getElementById()
+		...
+
+	3. BOM 	1天 【vscode】
+		各个浏览器提供的通过js操作浏览器的api,会有兼容性问题，另外只能在浏览器上执行
+		alert()
+		prompt()
+		confirm()
+		XMLHttpRequest
+
+
+
+
+
+
+软件
+	厂子上班？软件开发、软件培训
+		高级技工（）- 制造（创造）
+		软件	
+			使用软件 					群众（使用苹果手机）
+			编写软件   				富士康（苹果手机组装）=
+			编写软件编程语言 	 iphone公司搞苹果系统研发的人 s-c
+
+	智慧校园选课排课系统 （界面）
+前端
+	1. 底层【打扫卫生，手动打扫卫生】
+		html css Javascript 		
+			模态框、提示框、表格、列表...
+			dom操作（使用js控制css/html）
+				让模态框显示
+				var dom = document.getElementById("one");
+				dom.style.visible = true;
+	2. 中层【手扶着吸尘器打扫卫生】
+		jsp (html js jquery)
+		基于dom操作，dom驱动框架
+		jquery、easyui(组件)
+			$("#one").css("visible",true);
+	3. 高层【保姆】1500平 大别墅（森林公园）3亿
+		移动互联（前后台分离开发）
+		java 				写服务端语言
+			|
+		android/ios 写界面语言
+		H5 写界面的语言（web,混合式）（webview）
+		vue/angular/react 【脱离dom操作】
+			1. 获取数据 ajax，交互
+			2. 将数据绑定到页面中（vue-dom操作）
+			3. 当数据改变后页面更新（vue）
+
+	mysql装不上
+	1. apt install mysql-server-5.7
+	2. mysql -uroot -pxxx
+	3. 本地navicator连接不上
+		防火墙
+		mysql配置文件
+	
+	========================
+	1. 找见问题原因
+	2. google查询一下，查询出现问题的原因
+	3. 解决
+
+	问题：mysql装不上 （ubuntu16.04）
+	你是如何尝试解决： mysql -uroot -pxxx 报错 xxx
+	你觉得问题出在哪里：防火墙
+	你觉得难点在哪里：我不知道如何打开防火墙
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+======================================
+1. 在html中声明的charset表示什么意思？
+	告诉浏览器你应该使用charset指定的字符编码进行解码
+2. 在html中声明的viewport表示什么意思？
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	在移动设备中调整字体显示,相对单位
+	电脑 	1400 * 1240 	14寸
+	手机 	1400 * 1240 	6寸
+	dpi
+3. 你有没有用过阿里云服务器
+	mysql
+	jdk
+	apache
+	防火墙中打开3306、8888等端口
+
+	navicator连接上mysql数据库
+
+4. 请把你的github地址提供给我们（看看你写过的代码） 
+
+5. 博客（自己写一套博客系统；csdn）
+	看点资讯精选
+	编写博客
+	如何在阿里云上搭建java部署环境？
+
+	简历
+	基本信息
+		github地址
+		博客地址
+		个人网站
+	个人技能
+	项目经验
+	获奖经历
+
+
+
+
+电子商城
+	---------------------
+	1. java								10k
+	2. demo (html/css/js)	5k
+	3. android 						12k
+	4. ios 								15k
+	5. 公众号 							10k
+	6. 微信小程序 					12k
+	7. 钉钉小程序 					12k
+	---------------------
+	1. java 					10k
+	2. 大前端 					12k
+		原生开发（android）
+		混合式app开发
+		H5开发
+			界面
+			与平台通信（android/ios）
+
+xxx微小型项目定制工作室（远程办公）
+	公司官网 		5000
+	公司定制小的it项目
+	...
+
+~~~~~~~~~~拓展技术~~~~~~~~~~~
+1. 阿里云服务器的使用
+	外网ip 	39.108.98.130（linux）ubuntu16.04
+	root 	
+	root密码	
+
+	putty
+	ssh工具: xshell
+
+	> ssh 
+	> scp
+
+2. 登录到阿里云服务器上（ubuntu）
+	> ssh root@39.108.98.130
+3. 更新源
+	# apt update
+4. 安装软件
+	1) 在线安装（apache、mysql、vsftpd、subversion）
+		# apt install apache2
+	2) 解压安装（jdk、tomcat）
+		1. 下载安装包
+		2. 解压
+		3. 配置环境变量
+	3) 编译安装(nginx、fastdfs、... 专业软件)
+		源码 c代码
+
+5. 安装apache
+	apache作为静态网页的服务器
+	1) 测试
+		http://39.108.98.130:80 
+	2) 安装
+		# apt install apache2
+
+		查看apache2服务器的运行状态
+		# service apache2 status
+
+		通过wget测试web服务器的运行状态
+		# wget http://127.0.0.1:80/index.html 
+			如果这种方式可以获取到一个index.html说明你的apache打开了，并且能用
+		# wget http://39.108.98.130:80/index.html
+			如果访问不到表示无法通过外网访问我们的服务器，极有可能是防火墙的问题
+		
+	3) 部署
+		将我们的网页部署/var/www/html下即可
+
+		http://39.108.98.130:80/index.html
+
+		/ 										=> /var/www/html
+		/yanxuan/index.html 	=> /var/www/html/yanxuan/index.html
+		
+		http://39.108.98.130:80/yanxuan/index.html
+
+6. 如何将本地文件上传到阿里云服务器？？？
+	yanxuan	
+		images
+		css
+			common.css
+			style.css
+		index.html
+	1) 打包成为xxx.zip
+	2) 通过scp命令进行上传
+		> scp ./xxx.zip root@ip:~
+		将xxx.zip上传到ip指定的服务器的root账号的家目录下
+	3) 通过unzip进行解压
+		如果unzip没有安装，要进行安装
+		# apt install unzip
+		# unzip xxx.zip
+7. 在阿里云服务器中安装jdk
+	1) 通过scp命令将jdk上传到云服务器上
+	2) 将jdk解压到/opt下
+	3) 配置环境变量
+		/etc/profile
+
+		export JAVA_HOME=/opt/jdk1.8.0_131
+		export PATH=$PATH:$JAVA_HOME/bin
+8. 在阿里云服务器中安装mysql
+	1) 命令安装
+		# apt install mysql-server-5.7
+		一定要注意设置默认密码，默认密码不要为root
+		rootSH123
+	2) 安装完成mysql会自动启动
+		# mysql -uroot -prootSH123
+	
+	3) 默认情况下，root账号只允许当前主机访问
+		如果现在你通过navicator来访问就会访问失败，为了数据安全，不允许！
+		# mysql -uroot -h39.108.98.130 -prootSH123
+
+		解决方案：
+			1. 修改系统表user,将你使用的账号的host字段改为%,表示允许任何主机访问数据库
+				mysql> use mysql
+				mysql> update user set host='%' where user='root'
+			2. 修改mysql的配置文件 /etc/mysql/my.cnf
+				[client]
+				default-character-set=utf8
+				[mysqld]
+				character-set-server=utf8
+				max_connections=1000000
+
+				#一定放在结尾位置
+				bind-address=0.0.0.0
+			3. 重启mysql服务
+				# service mysql restart
+
+			4. 如果装失败了，请你彻底卸载mysql重新安装配置
+
+			5. 通过navicator连接mysql进行数据库的创建和表的创建
+				ddl 一般不用
+
+9. 如果涉及团队协作
+	代码版本控制 github(私有仓库，团队人数不能超过4人)
+	我就想用svn，研究如何在linux操作系统中安装svn的服务器
+
+	-----
+	将你之前写的后端服务程序部署到阿里云上
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
