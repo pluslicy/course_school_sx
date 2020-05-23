@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>浮动元素</title>
+  <style>
+    .outer > div {
+      height: 200px;
+      width: 260px;
+    }
+    .outer > div:not(:last-child){
+      float:left
+    }
+    .outer > div:last-child {
+      margin-left: 530px;
+    }
+    .outer > div:nth-child(even){
+      background-color: bisque;
+    }
+    .outer > div:nth-child(odd) {
+      background-color: cadetblue;
+    }
+  </style>
+</head>
+<body>
+  <div class="outer">
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>
+</body>
+</html>

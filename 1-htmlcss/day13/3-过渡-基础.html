@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>3-过渡</title>
+  <style>
+    .box {
+      width:200px;
+      height: 300px;
+      background-color: teal;
+
+      /*
+      transition-property: all;
+      transition-duration: 2s;
+      transition-delay: 1s;
+      transition-timing-function: linear;
+      */
+      transition:all 2s 1s linear;
+    }
+    .box:hover {
+      opacity: .5;
+      width: 400px;
+      height: 600px;
+    }
+  </style>
+</head>
+<body>
+  <div class="box">
+
+  </div>
+</body>
+</html>

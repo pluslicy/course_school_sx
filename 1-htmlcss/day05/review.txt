@@ -1,0 +1,62 @@
+1. Html标签
+  块标签
+    div
+    h1~h6
+    p
+    ul>li
+    ol>li
+    dl>dd,dt
+    H5拓展的块标签
+    header
+    nav
+    article
+    section
+    aside
+    footer
+    address
+
+  行内标签
+    span
+    strong
+    b
+    i
+    em
+    sub/sup
+    ...
+2. css语法
+  语法组成  选择器{规则}
+  注释      /**/
+  css在html中的引入方式
+    三种：
+3. css选择器
+  基本选择器
+  层次选择器
+  过滤器
+    属性过滤器    []
+    伪元素过滤器  ::
+    伪类过滤器    :
+4. 规则
+  盒子模型的相关规则 *
+  div {
+    规则
+  }
+    box-sizing:border-box;  边框盒子（怪异盒子）
+      width:100px; (包含了border宽度，内边距宽度，内容宽度)
+    box-sizing:content-box; 内容盒子
+      width:100px; (只是代表了内容的宽度)
+
+    margin:10px; 
+    border:5px solid #ccc;
+    padding:10px;
+    width:100px;
+    height:100px;
+
+
+
+  文本相关规则
+
+  字体相关的规则
+
+  背景相关的规则
+
+  列表相关的规则

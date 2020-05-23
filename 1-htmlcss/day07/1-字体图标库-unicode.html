@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>字体图标库</title>
+  <style>
+    /* 1. 声明一个全新的字体，这个字体名称叫 iconfont */
+    @font-face {
+      font-family: 'iconfont';  /* project id 1748703 */
+      src: url('http://at.alicdn.com/t/font_1748703_y0t0wfvyc6d.eot');
+      src: url('http://at.alicdn.com/t/font_1748703_y0t0wfvyc6d.eot?#iefix') format('embedded-opentype'),
+      url('http://at.alicdn.com/t/font_1748703_y0t0wfvyc6d.woff2') format('woff2'),
+      url('http://at.alicdn.com/t/font_1748703_y0t0wfvyc6d.woff') format('woff'),
+      url('http://at.alicdn.com/t/font_1748703_y0t0wfvyc6d.ttf') format('truetype'),
+      url('http://at.alicdn.com/t/font_1748703_y0t0wfvyc6d.svg#iconfont') format('svg');
+    }
+    /* 2. 使用 */
+    .icon {
+      font-family: 'iconfont';
+    }
+
+    a {
+      text-decoration: none;
+      color: #333333;
+    }
+    ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    ul.list > li {
+      line-height: 2em;
+      border-bottom: 1px solid #ededed;
+    }
+    ul.list > li:hover {
+      color: cadetblue;
+    }
+    ul.list > li:hover a {
+      /* color: cadetblue; */
+      color: rgb(255,0,0,0.2);
+    }
+
+    /* 通过伪元素添加字体图标 */
+    ul.list2 > li::before{
+      font-family: "iconfont";
+      content: "\eb96";
+    }
+   
+
+  </style>
+</head>
+<body>
+  <!-- 3. 通过unicode找到该编号对应的图标 -->
+  <div>
+    <span class="icon">&#xeb90;</span>
+    <span class="icon">&#xeb94;</span>
+  </div>
+  <!-- 企业级列表 -->
+  <ul class="list">
+    <li> <span class="icon">&#xeb92;</span> <a href="">我校晶态材料研究所首次报道具有密堆积结构的铜纳米团簇</a></li>
+    <li> <span class="icon">&#xeb92;</span> <a href="">我校获批国家重点研发计划“水资源高效开发利用”重点专项项目1项</a></li>
+    <li> <span class="icon">&#xeb92;</span> <a href="">我校组织协办线上科技成果转化案例深度解析主题报告会</a></li>
+    <li> <span class="icon">&#xeb92;</span> <a href="">我校晶态材料研究所首次报道具有密堆积结构的铜纳米团簇</a></li>
+    <li> <span class="icon">&#xeb92;</span> <a href="">我校获批国家重点研发计划“水资源高效开发利用”重点专项项目1项</a></li>
+    <li> <span class="icon">&#xeb92;</span> <a href="">我校组织协办线上科技成果转化案例深度解析主题报告会</a></li>
+  </ul>
+
+  <ul class="list list2">
+    <li> <a href="">我校晶态材料研究所首次报道具有密堆积结构的铜纳米团簇</a></li>
+    <li> <a href="">我校获批国家重点研发计划“水资源高效开发利用”重点专项项目1项</a></li>
+    <li> <a href="">我校组织协办线上科技成果转化案例深度解析主题报告会</a></li>
+    <li> <a href="">我校晶态材料研究所首次报道具有密堆积结构的铜纳米团簇</a></li>
+    <li> <a href="">我校获批国家重点研发计划“水资源高效开发利用”重点专项项目1项</a></li>
+    <li> <a href="">我校组织协办线上科技成果转化案例深度解析主题报告会</a></li>
+  </ul>
+</body>
+</html>

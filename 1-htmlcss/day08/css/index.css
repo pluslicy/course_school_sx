@@ -1,0 +1,139 @@
+/* 顶行 */
+.header {
+  background-color: #333333;
+}
+.header a {
+  color: #999999;
+}
+.header > .wrapper::after {
+  content: "";
+  clear: both;
+  display: block;
+}
+.header .nav_top {
+  float: right;
+}
+.header .nav_top > li {
+  float: left;
+  line-height: 36px;
+  position: relative;
+}
+.header .nav_top > li > .nav_sub {
+  position: absolute;
+  display: none;
+  background-color: #ffffff;
+  width: 100%;
+}
+.nav_top .nav_sub > ul {
+  padding: 0 .3em;
+  border:1px solid #f4f4f4;
+}
+.nav_top .nav_sub li {
+  border-bottom: 1px solid #f4f4f4;
+}
+
+.header .nav_top > li:hover > .nav_sub {
+  display: block;
+}
+.header .nav_top > li:hover a {
+  color: #ffffff;
+}
+.header .nav_top > li:not(:last-child) a {
+  margin-left: 1em;
+}
+.header .nav_top > li:not(:last-child)::after {
+  content: "";
+  border-right: 1px solid #999999;
+  vertical-align: middle;
+  margin-left: 1em;
+}
+.header .nav_top > li .icon_phone {
+  width: 7px;
+  height: 11px;
+  background: url(../images/icons.png);
+  vertical-align: middle;
+  margin-left: 1em;
+  margin-right: 6px;
+}
+/* 顶行 */
+
+/* 搜索行 */
+.search_bar {
+  padding: 20px 0;
+}
+.search_bar  .logo {
+  width: 212px;
+  height: 60px;
+  background-image: url(../images/icons.png);
+  background-position: 0 -298px;
+}
+  /* 搜索框和热点词 */
+.search_bar .search_box_hots{
+  float: left;
+ 
+}
+.search_bar .search_box {
+  border: 1px solid #cc9756;
+  line-height: 38px;
+  height: 38px;
+  box-sizing: border-box;
+  width: 570px;
+  border-radius: 19px;
+  padding-left: 20px;
+  overflow: hidden;
+}
+.search_bar .search_box input {
+  width: 400px;
+  padding-left: 1em;
+  border: none;
+}
+.search_bar .search_box .icon_search {
+  background-image: url(../images/icons.png);
+  background-position: 0 -518px;
+  height: 14px;
+  width: 14px;
+  vertical-align: middle;
+}
+.search_bar .search_box .btn_search {
+  float: right;
+  width: 90px;
+  background-color: #cc9756;
+  line-height: 38px;
+  text-align: center;
+  color: #ffffff;
+}
+  /* 购物车按钮 */
+.search_bar .btn_shopcar {
+  box-sizing: border-box;
+  float: left;
+  margin-left: 50px;
+  border:1px solid #cc9756;
+  border-radius: 19px;
+  color: #cc9756;
+  height: 38px;
+  line-height: 38px;
+  padding: 0 20px;
+  font-size: 14px;
+}
+.search_bar .btn_shopcar .icon_shopcar {
+  width: 18px;
+  height: 18px;
+  background-image: url(../images/icons.png);
+  background-position: 0 -148px;
+  vertical-align: middle;
+}
+.search_bar .btn_shopcar >span:nth-child(2){
+  margin: 0 .5em;
+}
+.search_bar .btn_shopcar .icon_shopcar_num{
+  background-image: url(../images/icons.png);
+  background-position: 0 -51px;
+  height: 19px;
+  width: 19px;
+  vertical-align: middle;
+  text-align: center;
+  line-height: 19px;
+  color: #ffffff;
+}
+
+/* 搜索行 */

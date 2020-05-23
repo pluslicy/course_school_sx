@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>固定定位</title>
+  <style>
+    .box {
+      background: cadetblue;
+      color: #ffffff;
+      position: fixed;
+      right: 0;
+      bottom: 200px;
+      width: 100px;
+      line-height: 3em;
+      text-align: center;
+    }
+    .box > .inner {
+      position: absolute;
+      left: -100%;
+      background-color: #f4f4f4;
+      top: 0;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="box">
+      联系我们
+      <div class="inner">
+        绝对定位
+      </div>
+    </div>
+    <div class="top">
+      top
+    </div>
+    <div class="content" style="min-height: 5000px;">
+  
+    </div>
+    <div class="bottom">
+      bottom
+    </div>
+  </div>
+</body>
+</html>

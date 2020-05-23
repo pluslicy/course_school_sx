@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>绝对定位-二级导航</title>
+  <style>
+    /* 重置 */
+    html {
+      font-size: 20px;  /*1rem = 20px  em取决于元素的字体大小 */
+    }
+    body {
+      font: 12px '微软雅黑';
+      margin:0;
+      color: #333333;
+    }
+    ul,ol,dl,p,h1,h2,h3 {
+      margin: 0;
+      padding: 0;
+    }
+    ul,ol {
+      list-style: none;
+    }
+    a {
+      text-decoration: none;
+      color: #333333;
+    }
+
+    .header {
+      background-color: #333333;
+      position: relative;
+    }
+    .header a,
+    .header {
+      color: #999999;
+    }
+    .wrapper {
+      width: 1090px;
+      margin: 0 auto;
+      background-color: #666666;
+    }
+    ul.menu {
+      
+    }
+    ul.menu::after {
+      content: "";
+      clear: both;
+      display: block;
+    }
+    ul.menu > li {
+      float: left;
+      padding-right: 2em;
+      line-height: 3em;
+    }
+    ul.menu > li > ul.menu_sub {
+      display: none;
+      position: absolute;
+      background-color: beige;
+      width: 100%;
+      left: 0;
+    }
+    ul.menu > li:hover > ul.menu_sub {
+      display: block;
+    }
+
+  </style>
+</head>
+<body>
+  <div class="header">
+    <div class="wrapper">
+      <ul class="menu">
+        <li>
+          <a href="">登录/注册</a>
+          <ul class="menu_sub">
+            <li>登录</li>
+            <li>注册</li>
+          </ul>
+        </li>
+        <li>
+          <a href="">我的订单</a>
+          <ul class="menu_sub">
+            <li>已完成订单</li>
+            <li>未完成订单</li>
+          </ul>
+        </li>
+        <li>
+          <a href="">会员</a>
+          <ul class="menu_sub">
+            <li></li>
+            <li></li>
+          </ul>
+        </li>
+        <li>
+          <a href="">甄选家</a>
+          <ul class="menu_sub">
+            <li></li>
+            <li></li>
+          </ul>
+        </li>
+        <li>
+          <a href="">企业采购</a>
+          <ul class="menu_sub">
+            <li></li>
+            <li></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</body>
+</html>

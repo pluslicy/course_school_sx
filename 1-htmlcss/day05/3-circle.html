@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>内外圆</title>
+  <style>
+    div {
+      box-sizing: border-box;
+    }
+    #outer {
+      width: 200px;
+      height: 200px;
+      border: 5px solid #ccc; /*内容宽度为190*/
+      padding: 30px;    /*内容宽度为150*/
+      border-radius: 100px;
+    }
+    #inner {
+      width: 100%; /*占满父元素的内容区域*/
+      height: 100%;
+      border: 5px solid #eeddee;
+      border-radius: 50%;
+    }
+  </style>
+</head>
+<body>
+  <div id="outer">
+    <div id="inner"></div>
+  </div>
+</body>
+</html>
