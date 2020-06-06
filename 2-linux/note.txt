@@ -45,10 +45,26 @@
       参数
         -a --all  所有
         -l        长格式列出
+        -rw-rw-r-- 1 wangchao wangchao    0 Jun  6 19:24 a.txt
+
+        -rw-rw-r--:
+          - 文件类型，-表示普通文件，d表示目录
+          rw-  拥有者具有该文件的读写权限 read write
+          rw-  拥有者的同组人具有该文件的读写权限 read write
+          rw-  其他人具有该文件的读权限 read
+        wangchao  拥有者
+        wangchao  拥有者所在组
+        0         文件大小
+        Jun  6 19:24    最近访问时间
+        a.txt     文件名
+
+
         在linux操作系统中，所有以点开头的文件都称为隐藏文件
       文件
     $ man 命令
       查看指定命令的手册
+    $ clear
+      清理命令
     $ pwd
       打印当前所在目录
       家目录
@@ -64,6 +80,119 @@
       新建用户
       只有超级管理员或者sudoer【可以使用超级管理员权限的用户】才能新建用户
       新建好了用户之后可以使用新用户尝试登陆一下服务器
-  3) 目录文件及权限操作
 
-  4) vim （linux操作系统上的文本编辑器，也是我们写代码的工具）
+    切换用户
+      charles -> terry
+      切换到terry目录下
+      $ su - terry
+      打印当前所在目录
+      $ pwd   
+
+  3) 目录文件及权限操作
+    默认情况下，普通用户只能在自己的家目录中进行文件及目录操作。 文件及目录的拥有者可以改变该文件及目录的权限
+    1. 目录相关命令
+      1) 新建文件夹 
+        $ mkdir 目录名 
+      2) 进入到文件夹
+        $ cd 目录地址
+        $ cd    进入到家目录中
+        $ cd ~  进入到家目录中
+        $ cd /  进入到根目录中
+        $ cd .. 进入到上一级目录中
+        $ cd .  进入到当前目录中
+      3) 删除文件夹
+        $ rmdir 目录  目录必须是空目录
+        $ rm -r 目录  -r级联删除
+    2. 文件操作
+      1) 新建文件
+        touch 文件名   新建文件或更新文件最新访问时间
+      2) 重命名文件
+        $ mv a.txt b.txt
+      3) 复制文件
+        $ cp 源文件 目的文件
+        $ cp /etc/passwd ./passwd
+      4) 移动文件
+        $ mv 源文件 目的文件
+        $ mv passwd ./css
+      5) 预览文件
+        $ more 文件   预览文件，回车查看下一行，空格查看下一页
+        $ head 文件   默认查看文件的头10行
+        $ head -100 文件
+        $ tail 文件   默认查看文件的尾10行
+    3. 权限
+      其他人  o
+      同组人  g
+      拥有者  u
+
+      rwx   
+      读    r
+      写    w
+      执行  x
+
+      $ chmod o+w a.txt
+        修改a.txt的权限，为其他用户添加写权限
+
+  4) vim （linux操作系统上的文本编辑器，也是我们写代码的工具，类似于vscode）
+    1. 打开编辑器
+      $ vi
+
+    2. 通过编辑器打开文件
+      $ vi a.txt
+      如果a.txt不存在，也可以打开，但是，在退出的时候会提示是否保存a.txt
+    3. 三种模式
+      底行模式
+        :底行模式的命令
+          :q  退出
+          :q! 不保存退出
+          :w  保存
+          :w a.txt  保存到a.txt文件中
+        /hao  全文查找‘hao’关键字
+      输入模式
+        i/a/o
+      命令行模型
+        刚打开vi
+        esc
+        yy  复制一行
+        4yy 复制四行
+        p   粘贴
+        dd  删除当前行
+        4dd 删除4行
+
+
+  5) 软件安装
+    默认情况下只有超级管理员或者sudoer才具有安装软件的权限
+    将wangchao变为一个sudoer
+      1. root进行登录
+      2. 修改/etc/sudoers
+      3. 保存退出
+      4. wangchao 使用sudo 命令 就可以以超级管理员身份来执行命令
+
+    apache 
+      1. 测试 浏览器 http://ip
+      2. 安装
+        假如你是root
+          $ apt install apache2
+        假如你是charles（sudoer）
+          $ sudo apt install apache2
+      3. 测试 浏览器 http://ip
+        这个时候就应该可以访问到apache主页了
+      4. 将我们编写的网页部署到apache的部署目录
+        apache的部署目录 /var/www/html中
+      
+        代码：
+          windows
+            c:/ test/ index.html
+          上传
+          linux 
+            /var/www/html
+              test/index.html
+          
+          访问
+            http://ip/test
+
+
+
+
+
+----------------------------------
+《鸟哥的linux私房菜》   跟着老师的知识点查缺补漏即可
